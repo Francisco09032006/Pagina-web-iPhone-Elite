@@ -440,11 +440,14 @@
         .hero-device {
             position: relative;
             width: clamp(220px, 60%, 360px);
+            padding: 22px;
+            border-radius: 30px;
+            background: linear-gradient(165deg, #f7f7f8 0%, #e6e6e8 100%);
             filter: drop-shadow(0 50px 70px rgba(0,0,0,0.6));
             animation: floatY 5s ease-in-out infinite;
             z-index: 2;
         }
-        .hero-device img { width: 100%; object-fit: contain; }
+        .hero-device img { width: 100%; object-fit: contain; mix-blend-mode: multiply; }
         .hero-badge-float {
             position: absolute;
             z-index: 3;
@@ -559,7 +562,7 @@
         .best-card.rank-1 .best-rank { background: var(--gold-grad); color: #000; border: none; box-shadow: 0 4px 14px rgba(255,255,255,0.2); }
         .best-img {
             aspect-ratio: 1; padding: 26px; display: grid; place-items: center;
-            position: relative;
+            position: relative; background: linear-gradient(160deg, #f7f7f8 0%, #e8e8ea 100%);
         }
         .best-img::after {
             content: ''; position: absolute; width: 60%; height: 60%; border-radius: 50%;
@@ -568,7 +571,8 @@
         }
         .best-img img {
             width: 70%; max-height: 100%; object-fit: contain; position: relative; z-index: 1;
-            filter: drop-shadow(0 22px 34px rgba(0,0,0,0.5));
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 16px 26px rgba(0,0,0,0.2));
             transition: transform 0.6s var(--ease-spring);
         }
         .best-card:hover .best-img img { transform: scale(1.08) translateY(-4px); }
@@ -597,8 +601,8 @@
             color: #000; font-size: 11px; font-weight: 800; padding: 5px 10px; border-radius: 100px;
             box-shadow: 0 6px 16px rgba(255,255,255,0.22);
         }
-        .offer-img { height: 150px; display: grid; place-items: center; margin-bottom: 12px; position: relative; }
-        .offer-img img { max-height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 18px 28px rgba(0,0,0,0.5)); transition: transform 0.4s; }
+        .offer-img { height: 168px; display: grid; place-items: center; margin-bottom: 12px; position: relative; background: linear-gradient(160deg, #f7f7f8 0%, #e8e8ea 100%); border-radius: var(--r-md); padding: 14px; }
+        .offer-img img { max-height: 100%; width: auto; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 14px 22px rgba(0,0,0,0.2)); transition: transform 0.4s; }
         .offer-card:hover .offer-img img { transform: scale(1.07); }
         .offer-name { font-size: 15px; font-weight: 700; }
         .offer-meta { font-size: 12px; color: var(--ink-mute); margin-top: 3px; }
@@ -663,14 +667,16 @@
         .cond-badge.reacondicionado { background: rgba(255,255,255,0.07); color: #C8C8CE; border-color: rgba(255,255,255,0.2); }
         .img-box {
             aspect-ratio: 1/1.05; display: grid; place-items: center; padding: 18px;
-            position: relative; background: radial-gradient(circle at 50% 38%, rgba(255,255,255,0.04), transparent 60%);
+            position: relative; background: linear-gradient(160deg, #f7f7f8 0%, #e8e8ea 100%);
         }
         .img-box img {
             width: 66%; max-height: 92%; object-fit: contain;
-            filter: drop-shadow(0 18px 26px rgba(0,0,0,0.5));
+            mix-blend-mode: multiply;
+            filter: drop-shadow(0 14px 22px rgba(0,0,0,0.2));
             transition: transform 0.5s var(--ease-spring);
         }
         .card:hover .img-box img { transform: scale(1.07) translateY(-3px); }
+        .img-box.img-missing { background: linear-gradient(165deg, var(--bg-2), var(--bg-1)); }
         .img-box.img-missing img { display: none; }
         .img-box.img-missing::after {
             content: attr(data-name); position: absolute; inset: 18px;
@@ -697,8 +703,8 @@
             transition: border-color 0.3s, transform 0.3s;
         }
         .acc-card:hover { border-color: var(--line-2); transform: translateY(-4px); }
-        .acc-ic { height: 92px; display: grid; place-items: center; margin-bottom: 12px; }
-        .acc-ic img { max-height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.5)); }
+        .acc-ic { height: 110px; display: grid; place-items: center; margin-bottom: 12px; background: linear-gradient(160deg, #f7f7f8 0%, #e8e8ea 100%); border-radius: var(--r-md); padding: 12px; }
+        .acc-ic img { max-height: 100%; width: auto; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 10px 16px rgba(0,0,0,0.18)); }
         .acc-name { font-size: 14px; font-weight: 700; }
         .acc-desc { font-size: 11.5px; color: var(--ink-mute); margin-top: 5px; line-height: 1.45; flex: 1; }
         .acc-row { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
@@ -864,8 +870,8 @@
             transform: translateX(-130%); transition: transform 0.55s var(--ease-spring);
         }
         #social-proof.show { display: flex; transform: translateX(0); }
-        .sp-img { width: 46px; height: 46px; border-radius: 11px; background: rgba(255,255,255,0.05); display: grid; place-items: center; flex-shrink: 0; padding: 5px; }
-        .sp-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .sp-img { width: 46px; height: 46px; border-radius: 11px; background: linear-gradient(160deg, #f7f7f8, #e8e8ea); display: grid; place-items: center; flex-shrink: 0; padding: 5px; }
+        .sp-img img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
         .sp-text { font-size: 12.5px; line-height: 1.35; }
         .sp-text b { font-weight: 700; }
         .sp-meta { font-size: 10.5px; color: var(--ink-mute); margin-top: 2px; display: flex; align-items: center; gap: 6px; }
@@ -906,8 +912,14 @@
         }
         @media (min-width: 800px) { .detail-img { aspect-ratio: auto; } }
         .detail-img::before { content: ''; position: absolute; width: 62%; height: 62%; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%); filter: blur(26px); }
-        .detail-img img { max-width: 70%; max-height: 100%; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.6)); transition: transform 0.5s var(--ease-spring), opacity 0.2s; }
+        .d-stage { position: relative; z-index: 1; display: grid; place-items: center; width: min(74%, 320px); aspect-ratio: 1; padding: 26px; border-radius: 24px; background: linear-gradient(160deg, #f7f7f8 0%, #e6e6e8 100%); box-shadow: var(--sh-md); }
+        .detail-img img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 16px 26px rgba(0,0,0,0.22)); transition: transform 0.5s var(--ease-spring), opacity 0.2s; }
         .detail-img img.swap { opacity: 0; transform: scale(0.94); }
+        .d-thumbs { position: absolute; bottom: 14px; left: 0; right: 0; z-index: 3; display: flex; justify-content: center; gap: 8px; }
+        .d-thumb { width: 46px; height: 46px; border-radius: 10px; overflow: hidden; padding: 4px; background: linear-gradient(160deg, #f7f7f8, #e8e8ea); border: 1.5px solid var(--line-2); transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+        .d-thumb:hover { transform: translateY(-2px); }
+        .d-thumb.active { border-color: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,0.18); }
+        .d-thumb img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
         .d-tag-wrap { position: absolute; top: 22px; left: 22px; z-index: 2; }
         .d-tag-wrap .card-tag { position: static; }
         .detail-info { padding: 30px 30px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
@@ -960,8 +972,8 @@
         .cart-empty { text-align: center; padding: 70px 20px; color: var(--ink-mute); display: flex; flex-direction: column; align-items: center; gap: 14px; }
         .cart-empty svg { width: 48px; height: 48px; opacity: 0.4; stroke-width: 1.3; }
         .cart-item { display: flex; gap: 13px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-        .cart-item-img { width: 58px; height: 58px; border-radius: 12px; background: rgba(255,255,255,0.04); display: grid; place-items: center; padding: 7px; flex-shrink: 0; }
-        .cart-item-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .cart-item-img { width: 58px; height: 58px; border-radius: 12px; background: linear-gradient(160deg, #f7f7f8, #e8e8ea); display: grid; place-items: center; padding: 7px; flex-shrink: 0; }
+        .cart-item-img img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
         .cart-item-info { flex: 1; min-width: 0; }
         .cart-item-name { font-size: 13.5px; font-weight: 700; }
         .cart-item-price { font-family: var(--font-display); font-size: 14px; font-weight: 600; margin-top: 3px; }
@@ -992,8 +1004,8 @@
         .search-results { max-height: 54vh; overflow-y: auto; padding: 10px; }
         .search-item { display: flex; align-items: center; gap: 14px; padding: 11px 13px; border-radius: 13px; cursor: pointer; transition: background 0.15s; }
         .search-item:hover { background: rgba(255,255,255,0.05); }
-        .search-item-img { width: 46px; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.04); display: grid; place-items: center; padding: 6px; flex-shrink: 0; }
-        .search-item-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .search-item-img { width: 46px; height: 46px; border-radius: 10px; background: linear-gradient(160deg, #f7f7f8, #e8e8ea); display: grid; place-items: center; padding: 6px; flex-shrink: 0; }
+        .search-item-img img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
         .search-item-name { font-size: 14px; font-weight: 700; }
         .search-item-price { font-size: 12.5px; color: var(--gold); font-weight: 600; margin-top: 1px; }
         .search-empty { padding: 44px 20px; text-align: center; color: var(--ink-mute); font-size: 14px; }
@@ -1448,7 +1460,8 @@
             <div class="detail-grid">
                 <div class="detail-img">
                     <div class="d-tag-wrap" id="d-tag-wrap"></div>
-                    <img id="d-img" src="" alt="">
+                    <span class="d-stage"><img id="d-img" src="" alt=""></span>
+                    <div class="d-thumbs" id="d-thumbs"></div>
                 </div>
                 <div class="detail-info">
                     <div>
@@ -1615,58 +1628,59 @@
             { id: 102, brand: 'accesorio', condition: 'nuevo', name: 'Carcasa Silicona', slug: 'carcasa-silicona', color: 'Transparente', storage: 'Universal', price: 12990, isAccessory: true }
         ];
 
-        // ─── MAPA DE IMÁGENES POR COLOR ───
+        // ─── MAPA DE IMÁGENES (frente + atrás por modelo, archivos reales del repo) ───
         const IMG_MAP = {
-            'iphone-11-pro': { 'verde noche': 'Delantera Verde Noche iPhone 11 Pro.png', 'verde': 'Delantera Verde Noche iPhone 11 Pro.png', 'verde medianoche': 'Delantera Verde Medianoche iPhone 11 Pro.png', 'gris espacial': 'Delantera Gris Espacial iPhone 11 Pro.png', 'space gray': 'Delantera Gris Espacial iPhone 11 Pro.png', 'plata': 'Delantera Plata iPhone 11 Pro.png', 'oro': 'Delantera Oro iPhone 11 Pro.png', 'dorado': 'Delantera Oro iPhone 11 Pro.png' },
-            'iphone-11-pm': { 'space gray': 'Delantera Gris Espacial iPhone 11 Pro Max.png', 'gris espacial': 'Delantera Gris Espacial iPhone 11 Pro Max.png', 'verde': 'Delantera Verde Medianoche iPhone 11 Pro Max.png', 'verde medianoche': 'Delantera Verde Medianoche iPhone 11 Pro Max.png', 'plata': 'Delantera Plata iPhone 11 Pro Max.png', 'oro': 'Delantera Oro iPhone 11 Pro Max.png', 'dorado': 'Delantera Oro iPhone 11 Pro Max.png' },
-            'iphone-12-mini': { 'azul': 'Delantera Azul iPhone 12 mini.png', 'azul medianoche': 'Delantera Azul iPhone 12 mini.png', 'blanco': 'Delantera Blanco iPhone 12 mini.png', 'negro': 'Delantera Negra iPhone 12 mini.png', 'negra': 'Delantera Negra iPhone 12 mini.png', 'púrpura': 'Delantera Púrpura iPhone 12 mini.png', 'purpura': 'Delantera Púrpura iPhone 12 mini.png', 'morado': 'Delantera Púrpura iPhone 12 mini.png', 'rojo': 'Delantera Roja iPhone 12 mini.png', 'roja': 'Delantera Roja iPhone 12 mini.png', 'verde': 'Delantera Verde iPhone 12 mini.png' },
-            'iphone-12': { 'azul': 'Delantera Azul iPhone 12.png', 'azul medianoche': 'Delantera Azul iPhone 12.png', 'blanco': 'Delantera Blanco iPhone 12.png', 'negro': 'Delantera Negro iPhone 12.png', 'negra': 'Delantera Negro iPhone 12.png', 'púrpura': 'Delantera Púrpura iPhone 12.png', 'purpura': 'Delantera Púrpura iPhone 12.png', 'morado': 'Delantera Púrpura iPhone 12.png', 'rojo': 'Delantera Rojo iPhone 12.png', 'roja': 'Delantera Rojo iPhone 12.png', 'verde': 'Delantera Verde iPhone 12.png' },
-            'iphone-12-pro': { 'azul': 'Delantera Azul Pacifico iPhone 12 Pro.png', 'azul pacifico': 'Delantera Azul Pacifico iPhone 12 Pro.png', 'grafito': 'Delantera Grafito iPhone 12 Pro.png', 'gris': 'Delantera Grafito iPhone 12 Pro.png', 'oro': 'Delantera Oro iPhone 12 Pro.png', 'dorado': 'Delantera Oro iPhone 12 Pro.png', 'plata': 'Delantera Plata iPhone 12 Pro.png' },
-            'iphone-12-pm': { 'azul': 'Delantera Azul Pacifico iPhone 12 Pro Max.png', 'azul pacifico': 'Delantera Azul Pacifico iPhone 12 Pro Max.png', 'grafito': 'Delantera Grafito iPhone 12 Pro Max.png', 'gris': 'Delantera Grafito iPhone 12 Pro Max.png', 'oro': 'Delantera Oro iPhone 12 Pro Max.png', 'dorado': 'Delantera Oro iPhone 12 Pro Max.png', 'plata': 'Delantera Plata iPhone 12 Pro Max.png' },
-            'iphone-13-mini': { 'azul': 'Delantera Azul iPhone 13 mini.png', 'blanco': 'Delantera Blanco Estrella iPhone 13 mini.png', 'blanco estrella': 'Delantera Blanco Estrella iPhone 13 mini.png', 'blanco estelar': 'Delantera Blanco Estrella iPhone 13 mini.png', 'medianoche': 'Delantera Medianoche iPhone 13 mini.png', 'negro': 'Delantera Medianoche iPhone 13 mini.png', 'rosa': 'Delantera Rosa iPhone 13 mini.png', 'rosado': 'Delantera Rosa iPhone 13 mini.png', 'verde': 'Delantera Verde iPhone 13 mini.png', 'rojo': 'Delantera Roja iPhone 13 mini.png', 'roja': 'Delantera Roja iPhone 13 mini.png' },
-            'iphone-13': { 'azul': 'Delantera Azul iPhone 13.png', 'blanco': 'Delantera Blanco Estrella iPhone 13.png', 'blanco estrella': 'Delantera Blanco Estrella iPhone 13.png', 'blanco estelar': 'Delantera Blanco Estrella iPhone 13.png', 'medianoche': 'Delantera Medianoche iPhone 13.png', 'negro': 'Delantera Medianoche iPhone 13.png', 'rosa': 'Delantera Rosa iPhone 13.png', 'rosado': 'Delantera Rosa iPhone 13.png', 'verde': 'Delantera Verde iPhone 13.png', 'rojo': 'Delantera Rojo iPhone 13.png' },
-            'iphone-13-pro': { 'azul': 'Delantera Azul Sierra iPhone 13 Pro.png', 'azul sierra': 'Delantera Azul Sierra iPhone 13 Pro.png', 'grafito': 'Delantera Grafito iPhone 13 Pro.png', 'gris': 'Delantera Grafito iPhone 13 Pro.png', 'oro': 'Delantera Oro iPhone 13 Pro.png', 'dorado': 'Delantera Oro iPhone 13 Pro.png', 'plata': 'Delantera Plata iPhone 13 Pro.png', 'verde': 'Delantera Verde Alpino iPhone 13 Pro.png', 'verde alpino': 'Delantera Verde Alpino iPhone 13 Pro.png' },
-            'iphone-13-pm': { 'azul': 'Delantera Azul Sierra iPhone 13 Pro Max.png', 'azul sierra': 'Delantera Azul Sierra iPhone 13 Pro Max.png', 'grafito': 'Delantera Grafito iPhone 13 Pro Max.png', 'gris': 'Delantera Grafito iPhone 13 Pro Max.png', 'oro': 'Delantera Oro iPhone 13 Pro Max.png', 'dorado': 'Delantera Oro iPhone 13 Pro Max.png', 'plata': 'Delantera Plata iPhone 13 Pro Max.png', 'verde': 'Delantera Verde Alpino iPhone 13 Pro Max.png', 'verde alpino': 'Delantera Verde Alpino iPhone 13 Pro Max.png' },
-            'iphone-14': { 'amarillo': 'Delantera Amarillo iPhone 14.png', 'amarilla': 'Delantera Amarillo iPhone 14.png', 'azul': 'Delantera Azul iPhone 14.png', 'blanco': 'Delantera Blanco Estrella iPhone 14.png', 'blanco estrella': 'Delantera Blanco Estrella iPhone 14.png', 'blanco estelar': 'Delantera Blanco Estrella iPhone 14.png', 'medianoche': 'Delantera Medianoche iPhone 14.png', 'negro': 'Delantera Medianoche iPhone 14.png', 'púrpura': 'Delantera Púrpura iPhone 14.png', 'purpura': 'Delantera Púrpura iPhone 14.png', 'morado': 'Delantera Púrpura iPhone 14.png', 'rojo': 'Delantera Rojo iPhone 14.png' },
-            'iphone-14-plus': { 'amarillo': 'Delantera Amarilla iPhone 14 Plus.png', 'amarilla': 'Delantera Amarilla iPhone 14 Plus.png', 'azul': 'Delantera Azul iPhone 14 Plus.png', 'blanco': 'Delantera Blanco Estrella iPhone 14 Plus.png', 'blanco estrella': 'Delantera Blanco Estrella iPhone 14 Plus.png', 'blanco estelar': 'Delantera Blanco Estrella iPhone 14 Plus.png', 'medianoche': 'Delantera Medianoche iPhone 14 Plus.png', 'negro': 'Delantera Medianoche iPhone 14 Plus.png', 'púrpura': 'Delantera Púrpura iPhone 14 Plus.png', 'purpura': 'Delantera Púrpura iPhone 14 Plus.png', 'morado': 'Delantera Púrpura iPhone 14 Plus.png', 'rojo': 'Delantera Roja iPhone 14 Plus.png', 'roja': 'Delantera Roja iPhone 14 Plus.png' },
-            'iphone-14-pro': { 'morado': 'Delantera Morado Oscuro iPhone 14 Pro.png', 'morado oscuro': 'Delantera Morado Oscuro iPhone 14 Pro.png', 'púrpura': 'Delantera Morado Oscuro iPhone 14 Pro.png', 'purpura': 'Delantera Morado Oscuro iPhone 14 Pro.png', 'negro': 'Delantera Negra Espacial iPhone 14 Pro.png', 'negra': 'Delantera Negra Espacial iPhone 14 Pro.png', 'negra espacial': 'Delantera Negra Espacial iPhone 14 Pro.png', 'oro': 'Delantera Oro iPhone 14 Pro.png', 'dorado': 'Delantera Oro iPhone 14 Pro.png', 'plata': 'Delantera Plata iPhone 14 Pro.png', 'blanco': 'Delantera Plata iPhone 14 Pro.png' },
-            'iphone-14-pm': { 'morado': 'Delantera Morado Oscuro iPhone 14 Pro Max.png', 'morado oscuro': 'Delantera Morado Oscuro iPhone 14 Pro Max.png', 'púrpura': 'Delantera Morado Oscuro iPhone 14 Pro Max.png', 'purpura': 'Delantera Morado Oscuro iPhone 14 Pro Max.png', 'negro': 'Delantera Negra Espacial iPhone 14 Pro Max.png', 'negra': 'Delantera Negra Espacial iPhone 14 Pro Max.png', 'negra espacial': 'Delantera Negra Espacial iPhone 14 Pro Max.png', 'oro': 'Delantera Oro iPhone 14 Pro Max.png', 'dorado': 'Delantera Oro iPhone 14 Pro Max.png', 'plata': 'Delantera Plata iPhone 14 Pro Max.png', 'blanco': 'Delantera Plata iPhone 14 Pro Max.png' },
-            'iphone-15': { 'amarillo': 'Delantera Amarillo iPhone 15.png', 'amarilla': 'Delantera Amarillo iPhone 15.png', 'azul': 'Delantera Azul iPhone 15.png', 'negro': 'Delantera Negro iPhone 15.png', 'negra': 'Delantera Negro iPhone 15.png', 'rosa': 'Delantera Rosa iPhone 15.png', 'rosado': 'Delantera Rosa iPhone 15.png', 'verde': 'Delantera Verde iPhone 15.png' },
-            'iphone-15-plus': { 'amarillo': 'Delantera Amarilla iPhone 15 Plus.png', 'amarilla': 'Delantera Amarilla iPhone 15 Plus.png', 'azul': 'Delantera Azul iPhone 15 Plus.png', 'negro': 'Delantera Negra iPhone 15 Plus.png', 'negra': 'Delantera Negra iPhone 15 Plus.png', 'rosa': 'Delantera Rosa iPhone 15 Plus.png', 'rosado': 'Delantera Rosa iPhone 15 Plus.png', 'verde': 'Delantera Verde iPhone 15 Plus.png' },
-            'iphone-15-pro': { 'titanio azul': 'Delantera Titanio Azul iPhone 15 Pro.png', 'azul titanio': 'Delantera Titanio Azul iPhone 15 Pro.png', 'azul': 'Delantera Titanio Azul iPhone 15 Pro.png', 'titanio blanco': 'Delantera Titanio Blanco iPhone 15 Pro.png', 'blanco': 'Delantera Titanio Blanco iPhone 15 Pro.png', 'titanio natural': 'Delantera Titanio Natural iPhone 15 Pro.png', 'natural': 'Delantera Titanio Natural iPhone 15 Pro.png', 'titanio negro': 'Delantera Titanio Negro iPhone 15 Pro.png', 'negro': 'Delantera Titanio Negro iPhone 15 Pro.png' },
-            'iphone-15-pm': { 'titanio azul': 'Delantera Titanio Azul iPhone 15 Pro Max.png', 'azul titanio': 'Delantera Titanio Azul iPhone 15 Pro Max.png', 'azul': 'Delantera Titanio Azul iPhone 15 Pro Max.png', 'titanio blanco': 'Delantera Titanio Blanco iPhone 15 Pro Max.png', 'blanco': 'Delantera Titanio Blanco iPhone 15 Pro Max.png', 'titanio natural': 'Delantera Titanio Natural iPhone 15 Pro Max.png', 'natural': 'Delantera Titanio Natural iPhone 15 Pro Max.png', 'titanio negro': 'Delantera Titanio Negro iPhone 15 Pro Max.png', 'negro': 'Delantera Titanio Negro iPhone 15 Pro Max.png' },
-            'iphone-16': { 'blanco': 'Delantera Blanco iPhone 16.png', 'negro': 'Delantera Negro iPhone 16.png', 'negra': 'Delantera Negro iPhone 16.png', 'rosa': 'Delantera Rosa iPhone 16.png', 'rosado': 'Delantera Rosa iPhone 16.png', 'ultramar': 'Delantera Ultramar iPhone 16.png', 'verde': 'Delantera Verde Azulado iPhone 16.png', 'verde azulado': 'Delantera Verde Azulado iPhone 16.png' },
-            'iphone-16-plus': { 'blanco': 'Delantera Blanco iPhone 16 Plus.png', 'negro': 'Delantera Negra iPhone 16 Plus.png', 'negra': 'Delantera Negra iPhone 16 Plus.png', 'rosa': 'Delantera Rosa iPhone 16 Plus.png', 'rosado': 'Delantera Rosa iPhone 16 Plus.png', 'ultramar': 'Delantera Ultramar iPhone 16 Plus.png', 'verde': 'Delantera Verde Azulado iPhone 16 Plus.png', 'verde azulado': 'Delantera Verde Azulado iPhone 16 Plus.png' },
-            'iphone-16-pro': { 'dorado': 'Delantera Titanio Desierto iPhone 16 Pro Dorado.png', 'titanio blanco': 'Delantera Titanio Blanco iPhone 16 Pro.png', 'blanco': 'Delantera Titanio Blanco iPhone 16 Pro.png', 'titanio del desierto': 'Delantera Titanio del Desierto iPhone 16 Pro.png', 'titanio desierto': 'Delantera Titanio del Desierto iPhone 16 Pro.png', 'desierto': 'Delantera Titanio del Desierto iPhone 16 Pro.png', 'titanio natural': 'Delantera Titanio Natural iPhone 16 Pro.png', 'natural': 'Delantera Titanio Natural iPhone 16 Pro.png', 'titanio negro': 'Delantera Titanio Negro iPhone 16 Pro.png', 'negro': 'Delantera Titanio Negro iPhone 16 Pro.png' },
-            'iphone-16-pm': { 'titanio blanco': 'Delantera Titanio Blanco iPhone 16 Pro Max.png', 'blanco': 'Delantera Titanio Blanco iPhone 16 Pro Max.png', 'titanio del desierto': 'Delantera Titanio del Desierto iPhone 16 Pro Max.png', 'titanio desierto': 'Delantera Titanio del Desierto iPhone 16 Pro Max.png', 'desierto': 'Delantera Titanio del Desierto iPhone 16 Pro Max.png', 'titanio natural': 'Delantera Titanio Natural iPhone 16 Pro Max.png', 'natural': 'Delantera Titanio Natural iPhone 16 Pro Max.png', 'titanio negro': 'Delantera Titanio Negro iPhone 16 Pro Max.png', 'negro': 'Delantera Titanio Negro iPhone 16 Pro Max.png' },
-            'iphone-17': { 'blanco': 'Delantera Blanco iPhone 17.png', 'lavanda': 'Delantera Lavanda iPhone 17.png', 'negro': 'Delantera Negro iPhone 17.png', 'niebla': 'Delantera Niebla iPhone 17.png', 'salvia': 'Delantera Salvia iPhone 17.png', 'verde': 'Delantera Salvia iPhone 17.png' },
-            'iphone-17-pro': { 'azul': 'Delantera Azul Cosmico iPhone 17 Pro.png', 'azul cosmico': 'Delantera Azul Cosmico iPhone 17 Pro.png', 'azul cósmico': 'Delantera Azul Cosmico iPhone 17 Pro.png', 'naranja': 'Delantera Naranja Cosmico iPhone 17 Pro.png', 'naranja cosmico': 'Delantera Naranja Cosmico iPhone 17 Pro.png', 'plata': 'Delantera Plata iPhone 17 Pro.png', 'blanco': 'Delantera Plata iPhone 17 Pro.png' },
-            'iphone-17-pm': { 'azul': 'Delantera Azul Cosmico iPhone 17 Pro Max.png', 'azul cosmico': 'Delantera Azul Cosmico iPhone 17 Pro Max.png', 'azul cósmico': 'Delantera Azul Cosmico iPhone 17 Pro Max.png', 'naranja': 'Delantera Naranja Cosmico iPhone 17 Pro Max.png', 'naranja cosmico': 'Delantera Naranja Cosmico iPhone 17 Pro Max.png', 'plata': 'Delantera Plata iPhone 17 Pro Max.png', 'titanio negro': 'Delantera Plata iPhone 17 Pro Max.png', 'blanco': 'Delantera Plata iPhone 17 Pro Max.png', 'negro': 'Delantera Plata iPhone 17 Pro Max.png' },
-            's23-ultra': { 'blanco': 'Delantera Blanco Samsung S23 Ultra.png', 'crema': 'Delantera Blanco Samsung S23 Ultra.png' },
-            'ipad-air-11-m3': { 'purple': 'Delantera Purple iPad Air 11 M3.png', 'morado': 'Delantera Purple iPad Air 11 M3.png', 'púrpura': 'Delantera Purple iPad Air 11 M3.png' },
-            'ipad-air-11-m3-blanco': { 'blanco estelar': 'Delantera Blanco Estelar iPad Air 11 M3.png', 'blanco': 'Delantera Blanco Estelar iPad Air 11 M3.png' },
-            'macbook-air-13-m3': { 'midnight': 'Delantera Midnight MacBook Air 13 M3.png', 'medianoche': 'Delantera Midnight MacBook Air 13 M3.png' },
-            'macbook-pro-14-m3-pro': { 'black': 'Delantera Black MacBook Pro 14 M3 Pro.png', 'negro': 'Delantera Black MacBook Pro 14 M3 Pro.png' }
+            'iphone-11':        { front: '11 fronter.jpg', back: '11 back.jpg' },
+            'iphone-11-pro':    { front: '11 pro fronter.jpg', back: '11 pro back.jpg' },
+            'iphone-11-pm':     { front: '11 pro max fronter.jpg', back: '11 pro max back.jpg' },
+            'iphone-12-mini':   { front: '12 mini, 12 fronter.jpg', back: '12 mini, 12 trasero.jpg' },
+            'iphone-12':        { front: '12 mini, 12 fronter.jpg', back: '12 mini, 12 trasero.jpg' },
+            'iphone-12-pro':    { front: '12 pro, pro max fronter.jpg', back: '12 pro, pro max back.jpg' },
+            'iphone-12-pm':     { front: '12 pro, pro max fronter.jpg', back: '12 pro, pro max back.jpg' },
+            'iphone-13-mini':   { front: '13 mini fronter.jpg', back: '13 mini espalda.jpg' },
+            'iphone-13':        { front: '13 fronter.jpg', back: '13 back.jpg' },
+            'iphone-13-pro':    { front: '13 pro, pro max fronter.jpg', back: '13 pro, pro max back.jpg' },
+            'iphone-13-pm':     { front: '13 pro, pro max fronter.jpg', back: '13 pro, pro max back.jpg' },
+            'iphone-14':        { front: '14 fronter.jpg', back: '14 back.jpg' },
+            'iphone-14-plus':   { front: '14 más fronter.jpg', back: '14 más espalda.jpg' },
+            'iphone-14-pro':    { front: '14 pro, pro max fronter.jpg', back: '14 pro, pro max back.jpg' },
+            'iphone-14-pm':     { front: '14 pro, pro max fronter.jpg', back: '14 pro, pro max back.jpg' },
+            'iphone-15':        { front: '15 fronter.jpg', back: '15 back.jpg' },
+            'iphone-15-plus':   { front: '15 fronter.jpg', back: '15 back.jpg' },
+            'iphone-15-pro':    { front: '15 pro, pro max fronter.jpg', back: '15 pro, pro max back.jpg' },
+            'iphone-15-pm':     { front: '15 pro, pro max fronter.jpg', back: '15 pro, pro max back.jpg' },
+            'iphone-16':        { front: '16 fronter.jpg', back: '16 back.jpg' },
+            'iphone-16-plus':   { front: '16 fronter.jpg', back: '16 back.jpg' },
+            'iphone-16e':       { front: '16e fronter.jpg', back: '16e atrás.jpg' },
+            'iphone-16-pro':    { front: '16 pro, pro max fronter.jpg', back: '16 pro, pro max back.jpg' },
+            'iphone-16-pm':     { front: '16 pro, pro max fronter.jpg', back: '16 pro, pro max back.jpg' },
+            'iphone-17':        { front: '17 fronter.jpg', back: '17 atrás.jpg' },
+            'iphone-17-air':    { front: '17 air fronter.jpg', back: '17 air back.jpg' },
+            'iphone-17-pro':    { front: '17 pro fronter.jpg', back: '17 pro back.jpg' },
+            'iphone-17-pm':     { front: '17 pro max fronter.jpg', back: '17 pro max back.jpg' }
+            // Samsung, iPad y MacBook: aún sin imágenes en el repo → muestran placeholder con el nombre.
         };
 
-        const ACC_IMG = { 'cargador-20w': 'accesorio-cargador-usbc.png', 'cargador-lightning': 'accesorio-cargador-lightning.png', 'lamina-templado': 'accesorio-lamina.png', 'carcasa-silicona': 'accesorio-carcasa.png' };
+        const ACC_IMG = { 'cargador-20w': 'cargador lightning, usb-c.jpg', 'cargador-lightning': 'cargador lightning, usb-c.jpg', 'lamina-templado': 'lámina de vidrio.png', 'carcasa-silicona': 'carcasa.jpg' };
         const ACC_META = {
-            'cargador-20w': { img: 'accesorio-cargador-usbc.png', desc: 'Carga rápida USB-C 20W con cable USB-C. Para iPhone 15, 16 y 17.' },
-            'cargador-lightning': { img: 'accesorio-cargador-lightning.png', desc: 'Carga rápida USB-C 20W con cable Lightning. Para iPhone 8 al 14.' },
-            'lamina-templado': { img: 'accesorio-lamina.png', desc: 'Vidrio templado 9H. Protección total para tu pantalla.' },
-            'carcasa-silicona': { img: 'accesorio-carcasa.png', desc: 'Carcasa transparente de silicona, ajuste perfecto anti-impacto.' }
+            'cargador-20w': { img: 'cargador lightning, usb-c.jpg', desc: 'Carga rápida USB-C 20W con cable USB-C. Para iPhone 15, 16 y 17.' },
+            'cargador-lightning': { img: 'cargador lightning, usb-c.jpg', desc: 'Carga rápida USB-C 20W con cable Lightning. Para iPhone 8 al 14.' },
+            'lamina-templado': { img: 'lámina de vidrio.png', desc: 'Vidrio templado 9H. Protección total para tu pantalla.' },
+            'carcasa-silicona': { img: 'carcasa.jpg', desc: 'Carcasa transparente de silicona, ajuste perfecto anti-impacto.' }
         };
 
         function imgFor(p) {
-            if (p.isAccessory && ACC_IMG[p.slug]) return encodeURI(ACC_IMG[p.slug]);
+            if (p.isAccessory) return encodeURI(ACC_IMG[p.slug] || `${p.slug}.png`);
             const m = IMG_MAP[p.slug];
-            if (m) { const key = (p.color || '').toLowerCase().trim(); if (m[key]) return encodeURI(m[key]); }
-            return encodeURI(`${p.slug}-front.png`);
+            return encodeURI(m && m.front ? m.front : `${p.slug}-front.png`);
         }
         function imgForSlug(slug) {
             const m = IMG_MAP[slug];
-            if (m) { const first = Object.values(m)[0]; if (first) return encodeURI(first); }
-            return encodeURI(`${slug}-front.png`);
+            return encodeURI(m && m.front ? m.front : `${slug}-front.png`);
+        }
+        function imgBack(slug) {
+            const m = IMG_MAP[slug];
+            return m && m.back ? encodeURI(m.back) : '';
         }
 
         const COLOR_HEX = {
@@ -1859,6 +1873,14 @@
             img.classList.add('swap');
             setTimeout(() => { img.src = imgFor(sel); img.alt = sel.name; img.onerror = function () { this.style.opacity = 0.18; }; img.classList.remove('swap'); }, 140);
 
+            const thumbsEl = document.getElementById('d-thumbs');
+            if (thumbsEl) {
+                const views = [imgFor(sel), imgBack(sel.slug)].filter(Boolean);
+                thumbsEl.innerHTML = views.length > 1
+                    ? views.map((v, i) => `<button class="d-thumb ${i === 0 ? 'active' : ''}" onclick="swapDetailView('${v}', this)"><img src="${v}" onerror="this.closest('.d-thumb').style.display='none'"></button>`).join('')
+                    : '';
+            }
+
             document.getElementById('d-name').textContent = sel.name;
             document.getElementById('d-sub').textContent = `${variants.length} variante${variants.length > 1 ? 's' : ''} disponible${variants.length > 1 ? 's' : ''} · Liberado · Con boleta`;
             document.getElementById('d-color-name').textContent = sel.color;
@@ -1908,6 +1930,13 @@
             renderDetail();
         }
         function addSelectedToCart() { const sel = findSelectedVariant(); if (!sel) return; addToCart(sel.id); closeDetail(); }
+        function swapDetailView(src, btn) {
+            const img = document.getElementById('d-img');
+            img.classList.add('swap');
+            setTimeout(() => { img.src = src; img.classList.remove('swap'); }, 140);
+            document.querySelectorAll('#d-thumbs .d-thumb').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        }
 
         // ─── CARRITO ───
         function toggleCart() { document.getElementById('cart-panel').classList.toggle('open'); document.getElementById('cart-backdrop').classList.toggle('open'); }
