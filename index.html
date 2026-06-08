@@ -1566,67 +1566,92 @@
         const WA_NUMBER = '56985884670';
         const formatCLP = n => '$' + n.toLocaleString('es-CL');
 
-        // ─── STOCK ───
-        const stock = [
-            { id: 1, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 11', slug: 'iphone-11', color: 'Rojo', storage: '64 GB', price: 169990 },
-            { id: 2, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 11 Pro', slug: 'iphone-11-pro', color: 'Verde Noche', storage: '64 GB', price: 249990 },
-            { id: 3, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 11 Pro Max', slug: 'iphone-11-pm', color: 'Space Gray', storage: '256 GB', price: 289990 },
-            { id: 4, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 mini', slug: 'iphone-12-mini', color: 'Blanco', storage: '64 GB', price: 219990 },
-            { id: 5, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12', slug: 'iphone-12', color: 'Azul medianoche', storage: '64 GB', price: 239990 },
-            { id: 6, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro', slug: 'iphone-12-pro', color: 'Dorado', storage: '128 GB', price: 329990 },
-            { id: 7, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro', slug: 'iphone-12-pro', color: 'Gris', storage: '128 GB', price: 329990 },
-            { id: 8, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro Max', slug: 'iphone-12-pm', color: 'Gris', storage: '128 GB', price: 399990 },
-            { id: 9, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro Max', slug: 'iphone-12-pm', color: 'Azul', storage: '128 GB', price: 399990 },
-            { id: 10, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 mini', slug: 'iphone-13-mini', color: 'Medianoche', storage: '128 GB', price: 309990 },
-            { id: 11, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13', slug: 'iphone-13', color: 'Medianoche', storage: '128 GB', price: 369990 },
-            { id: 36, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13', slug: 'iphone-13', color: 'Blanco estelar', storage: '128 GB', price: 369990 },
-            { id: 37, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13', slug: 'iphone-13', color: 'Rosa', storage: '128 GB', price: 369990 },
-            { id: 12, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro', slug: 'iphone-13-pro', color: 'Grafito', storage: '256 GB', price: 479990 },
-            { id: 38, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro', slug: 'iphone-13-pro', color: 'Azul Sierra', storage: '256 GB', price: 479990 },
-            { id: 13, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro Max', slug: 'iphone-13-pm', color: 'Plata', storage: '128 GB', price: 549990 },
-            { id: 39, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro Max', slug: 'iphone-13-pm', color: 'Grafito', storage: '128 GB', price: 549990 },
-            { id: 14, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14', slug: 'iphone-14', color: 'Rojo', storage: '128 GB', price: 429990 },
-            { id: 40, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14', slug: 'iphone-14', color: 'Medianoche', storage: '128 GB', price: 429990 },
-            { id: 15, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Plus', slug: 'iphone-14-plus', color: 'Azul', storage: '128 GB', price: 509990 },
-            { id: 16, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro', slug: 'iphone-14-pro', color: 'Blanco', storage: '128 GB', price: 569990 },
-            { id: 41, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro', slug: 'iphone-14-pro', color: 'Blanco', storage: '256 GB', price: 589990 },
-            { id: 42, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro · E-Sim', slug: 'iphone-14-pro', color: 'Negro', storage: '128 GB', price: 569990 },
-            { id: 43, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro', slug: 'iphone-14-pro', color: 'Morado', storage: '128 GB', price: 569990 },
-            { id: 17, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro Max', slug: 'iphone-14-pm', color: 'Negro', storage: '128 GB', price: 649990 },
-            { id: 18, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro Max', slug: 'iphone-14-pm', color: 'Dorado', storage: '256 GB', price: 679990, tag: 'DESTACADO' },
-            { id: 19, brand: 'iphone', condition: 'sellado', name: 'iPhone 15', slug: 'iphone-15', color: 'Rosado', storage: '128 GB', price: 569990, tag: 'SELLADO' },
-            { id: 20, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Plus', slug: 'iphone-15-plus', color: 'Verde', storage: '128 GB', price: 619990 },
-            { id: 21, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro', slug: 'iphone-15-pro', color: 'Titanio natural', storage: '128 GB', price: 669990 },
-            { id: 22, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro Max', slug: 'iphone-15-pm', color: 'Negro', storage: '256 GB', price: 789990 },
-            { id: 44, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro Max', slug: 'iphone-15-pm', color: 'Titanio natural', storage: '256 GB', price: 789990 },
-            { id: 45, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro Max', slug: 'iphone-15-pm', color: 'Azul titanio', storage: '256 GB', price: 789990 },
-            { id: 23, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16', slug: 'iphone-16', color: 'Negro', storage: '256 GB', price: 639990 },
-            { id: 46, brand: 'iphone', condition: 'sellado', name: 'iPhone 16', slug: 'iphone-16', color: 'Negro', storage: '128 GB', price: 659990, tag: 'NUEVO' },
-            { id: 24, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Plus', slug: 'iphone-16-plus', color: 'Ultramar', storage: '128 GB', price: 739990 },
-            { id: 25, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16e', slug: 'iphone-16e', color: 'Negro', storage: '128 GB', price: 599990 },
-            { id: 26, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Pro', slug: 'iphone-16-pro', color: 'Dorado', storage: '512 GB', price: 789990 },
-            { id: 27, brand: 'iphone', condition: 'reacondicionado', name: 'iPhone 16 Pro Max', slug: 'iphone-16-pm', color: 'Blanco', storage: '128 GB', price: 849990, oldPrice: 939990, tag: 'OFERTA' },
-            { id: 47, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Pro Max', slug: 'iphone-16-pm', color: 'Titanio natural', storage: '256 GB', price: 879990, oldPrice: 949990, tag: 'OFERTA' },
-            { id: 28, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Pro Max', slug: 'iphone-16-pm', color: 'Negro', storage: '256 GB', price: 949990 },
-            { id: 29, brand: 'iphone', condition: 'sellado', name: 'iPhone 17', slug: 'iphone-17', color: 'Negro', storage: '256 GB', price: 889990, oldPrice: 909990, tag: 'NUEVO' },
-            { id: 30, brand: 'iphone', condition: 'sellado', name: 'iPhone 17 Air', slug: 'iphone-17-air', color: 'Plata', storage: '256 GB', price: 939990, tag: 'NUEVO' },
-            { id: 31, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 17 Pro', slug: 'iphone-17-pro', color: 'Blanco', storage: '256 GB', price: 1249990 },
-            { id: 32, brand: 'iphone', condition: 'sellado', name: 'iPhone 17 Pro Max', slug: 'iphone-17-pm', color: 'Blanco', storage: '256 GB', price: 1349990, tag: 'NUEVO' },
-            { id: 48, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S23 Ultra', slug: 's23-ultra', color: 'Blanco', storage: '512 GB', price: 479990 },
-            { id: 33, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S26 Ultra', slug: 's26-ultra', color: 'Blue', storage: '256 GB', price: 999990 },
-            { id: 34, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S24 Ultra', slug: 's24-ultra', color: 'Negro', storage: '256 GB', price: 589990 },
-            { id: 35, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S24 Ultra', slug: 's24-ultra', color: 'Negro', storage: '512 GB', price: 619990 },
-            { id: 49, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3', slug: 'ipad-air-11-m3', color: 'Purple', storage: '128 GB', price: 569990, tag: 'NUEVO' },
-            { id: 50, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3 + Apple Pencil', slug: 'ipad-air-11-m3', color: 'Purple', storage: '128 GB', price: 659990, tag: 'NUEVO' },
-            { id: 51, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3', slug: 'ipad-air-11-m3-blanco', color: 'Blanco Estelar', storage: '128 GB', price: 569990, tag: 'NUEVO' },
-            { id: 52, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3 + Pencil Pro', slug: 'ipad-air-11-m3-blanco', color: 'Blanco Estelar', storage: '128 GB', price: 659990, tag: 'NUEVO' },
-            { id: 53, brand: 'macbook', condition: 'seminuevo', name: 'MacBook Air 13" M3', slug: 'macbook-air-13-m3', color: 'Midnight', storage: '512 GB · 16GB RAM', price: 889990 },
-            { id: 54, brand: 'macbook', condition: 'sellado', name: 'MacBook Pro 14" M3 Pro', slug: 'macbook-pro-14-m3-pro', color: 'Black', storage: '1 TB · 36GB RAM', price: 1999990, tag: 'NUEVO' },
+        // ─── ACCESORIOS (no están en el Sheet del catálogo; hardcoded) ───
+        const ACCESSORIES = [
             { id: 100, brand: 'accesorio', condition: 'nuevo', name: 'Cargador USB-C 20W', slug: 'cargador-20w', color: 'Blanco', storage: '20W', price: 14990, isAccessory: true },
             { id: 103, brand: 'accesorio', condition: 'nuevo', name: 'Cargador Lightning 20W', slug: 'cargador-lightning', color: 'Blanco', storage: '20W', price: 14990, isAccessory: true },
             { id: 101, brand: 'accesorio', condition: 'nuevo', name: 'Lámina Vidrio Templado', slug: 'lamina-templado', color: 'Transparente', storage: 'Universal', price: 9990, isAccessory: true },
             { id: 102, brand: 'accesorio', condition: 'nuevo', name: 'Carcasa Silicona', slug: 'carcasa-silicona', color: 'Transparente', storage: 'Universal', price: 12990, isAccessory: true }
         ];
+
+        // ─── STOCK EN VIVO desde n8n (el dueño edita por Telegram → Google Sheets) ───
+        const CATALOG_API_URL = 'https://up-n8n.7kmtuf.easypanel.host/webhook/catalogo-iphone-elite';
+        let stock = [];
+
+        function modelToSlug(name, color) {
+            if (!name) return '';
+            let s = String(name).toLowerCase().trim();
+            if (s.includes('ipad air 11') && s.includes('m3')) {
+                return (color && /blanco/i.test(color)) ? 'ipad-air-11-m3-blanco' : 'ipad-air-11-m3';
+            }
+            if (s.includes('macbook pro') && s.includes('m3 pro')) return 'macbook-pro-14-m3-pro';
+            if (s.includes('macbook air') && s.includes('m3')) return 'macbook-air-13-m3';
+            const sm = s.match(/^samsung s(\d+) ultra/);
+            if (sm) return `s${sm[1]}-ultra`;
+            if (s.startsWith('iphone')) {
+                s = s.replace(/^iphone /, 'iphone-');
+                s = s.replace(/ pro max( · e-?sim| e-?sim)?$/, '-pm');
+                s = s.replace(/ pro( · e-?sim| e-?sim)?$/, '-pro');
+                s = s.replace(/ plus$/, '-plus');
+                s = s.replace(/ mini$/, '-mini');
+                s = s.replace(/ air$/, '-air');
+                return s.replace(/\s+/g, '-');
+            }
+            return s.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        }
+
+        function mapApiProduct(p) {
+            const brand = String(p.marca_raw || '').toLowerCase().split(/[-\s]/)[0] || 'iphone';
+            const condition = String(p.condicion || 'seminuevo').toLowerCase();
+            return {
+                id: Number(p.id) || 0,
+                brand,
+                condition,
+                name: p.modelo || '',
+                slug: modelToSlug(p.modelo, p.color),
+                color: p.color || '',
+                storage: p.almacenamiento || '',
+                price: Number(p.precio || 0),
+                tag: condition === 'sellado' ? 'SELLADO' : ''
+            };
+        }
+
+        function setCatalogStatus(html, isError) {
+            let el = document.getElementById('catalog-status');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'catalog-status';
+                el.style.cssText = 'text-align:center;padding:1.5rem 1rem;font-size:.92rem;opacity:.85;';
+                const filtersEl = document.getElementById('filters');
+                if (filtersEl) filtersEl.insertAdjacentElement('afterend', el);
+            }
+            if (!html) { el.style.display = 'none'; return; }
+            el.style.display = '';
+            el.style.color = isError ? '#d97a7a' : '';
+            el.innerHTML = html;
+        }
+
+        async function loadCatalog() {
+            setCatalogStatus('Cargando catálogo en vivo…');
+            try {
+                const r = await fetch(CATALOG_API_URL, { cache: 'no-store' });
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                const data = await r.json();
+                const products = (data.productos || []).map(mapApiProduct).filter(p => p.id);
+                stock = [...products, ...ACCESSORIES];
+                renderStock();
+                renderBestsellers();
+                renderOffers();
+                renderAccessories();
+                setCatalogStatus('');
+            } catch (e) {
+                console.error('Error cargando catálogo:', e);
+                stock = [...ACCESSORIES];
+                renderStock();
+                renderAccessories();
+                setCatalogStatus('No pudimos cargar el catálogo. <button onclick="loadCatalog()" style="background:none;border:1px solid currentColor;border-radius:6px;padding:.35rem .8rem;color:inherit;cursor:pointer;margin-left:.5rem">Reintentar</button>', true);
+            }
+        }
 
         // ─── MAPA DE IMÁGENES (frente + atrás por modelo, archivos reales del repo) ───
         const IMG_MAP = {
@@ -2263,15 +2288,17 @@
             intro.classList.add('gone');
             setTimeout(() => { intro.style.display = 'none'; }, 1000);
         }
-        function init() {
+        async function init() {
             document.getElementById('hero-device-img').src = imgForSlug('iphone-17-pro');
             document.getElementById('year').textContent = '2026';
             setWaLinks();
-            renderFilters(); renderStock(); renderBestsellers(); renderOffers(); renderAccessories();
+            renderFilters();
             renderFAQ(); setupStarPicker(); renderReviews();
             initReveal(); initHeaderScroll(); initMagnetic(); startSocialProof();
             // auto-cierre del intro de respaldo
             setTimeout(() => { if (!entered) enterSite(); }, 4200);
+            // Catálogo en vivo (n8n → Sheets editado por Telegram)
+            await loadCatalog();
         }
 
         document.addEventListener('keydown', e => {
