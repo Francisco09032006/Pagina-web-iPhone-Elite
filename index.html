@@ -1903,7 +1903,7 @@
                 return `<button class="vchip ${s === detailState.storage ? 'active' : ''} ${!avail ? 'unavailable' : ''}" onclick="selectStorage('${esc(s)}')">${s}</button>`;
             }).join('');
 
-            document.getElementById('d-wa').href = waLink(`Hola iPhone Elite 👋 Me interesa el ${sel.name} ${sel.storage} · ${sel.color} por ${formatCLP(sel.price)}. ¿Sigue disponible? 📦`);
+            document.getElementById('d-wa').href = waLink(`Hola iPhone Elite 👋 Me interesa comprar el ${sel.name} ${sel.storage} · ${sel.color} publicado en su web por ${formatCLP(sel.price)}. ¿Sigue disponible? Quiero coordinar compra hoy mismo 📦`);
 
             const upsellEl = document.getElementById('d-upsell');
             if (sel.isAccessory) { upsellEl.innerHTML = ''; return; }
@@ -1990,10 +1990,10 @@
             let waMsg;
             if (cart.length === 1) {
                 const p = cart[0]; const desc = p.isAccessory ? p.name : `${p.name} ${p.storage} · ${p.color}`;
-                waMsg = `Hola iPhone Elite 👋 Me interesa comprar el ${desc} publicado en su web por ${formatCLP(p.price)}. ¿Sigue disponible? Quiero coordinar compra hoy 📦`;
+                waMsg = `Hola iPhone Elite 👋 Me interesa comprar el ${desc} publicado en su web por ${formatCLP(p.price)}. ¿Sigue disponible? Quiero coordinar compra hoy mismo 📦`;
             } else {
                 const lista = cart.map(p => `• ${p.isAccessory ? p.name : `${p.name} ${p.storage} · ${p.color}`} — ${formatCLP(p.price)}`).join('\n');
-                waMsg = `Hola iPhone Elite 👋 Me interesa comprar:\n${lista}\n\nTotal: ${formatCLP(Math.max(total, 0))}\n\n¿Siguen disponibles? Quiero coordinar compra hoy 📦`;
+                waMsg = `Hola iPhone Elite 👋 Me interesa comprar:\n${lista}\n\nTotal: ${formatCLP(Math.max(total, 0))}\n\n¿Siguen disponibles? Quiero coordinar compra hoy mismo 📦`;
             }
             cta.href = waLink(waMsg); cta.classList.remove('disabled');
         }
