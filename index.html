@@ -1072,8 +1072,8 @@
     <div id="intro" onclick="enterSite()">
         <div class="ring-spin"></div>
         <div class="intro-logo">
-            <img class="intro-monogram" src="logo.png" alt="iPhone Elite"
-                onerror="this.outerHTML='<svg class=\'intro-monogram\' viewBox=\'0 0 120 120\'><rect x=\'6\' y=\'6\' width=\'108\' height=\'108\' rx=\'28\' fill=\'none\' stroke=\'url(%23goldGrad)\' stroke-width=\'2\'/><text x=\'50%\' y=\'56%\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'Space Grotesk,sans-serif\' font-size=\'58\' font-weight=\'600\' fill=\'url(%23goldGrad)\'>iE</text></svg>'">
+            <img class="intro-monogram" src="logo.svg" alt="iPhone Elite"
+                onerror="this.onerror=null; this.src='logo.png';">
             <div class="intro-word">
                 <span class="p1">iPhone</span><span class="gold-text">Elite</span>
             </div>
@@ -2276,7 +2276,7 @@
             });
         }
         function setWaLinks() {
-            const greet = waLink('Hola iPhone Elite 👋 Vengo de su página web y me interesa comprar un iPhone. ¿Me pueden ayudar a coordinar compra hoy mismo? 📦');
+            const greet = waLink('Hola iPhone Elite 👋 Me interesa comprar el {producto} publicado en su web por {precio}. ¿Sigue disponible? Quiero coordinar compra hoy mismo 📦');
             ['hero-wa', 'foot-wa', 'foot-wa-link', 'fab-wa', 'sm-wa'].forEach(id => { const el = document.getElementById(id); if (el) el.href = greet; });
         }
 
