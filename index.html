@@ -2163,14 +2163,14 @@
                 const stars = '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars);
                 const recent = !r.seed && r.ts && (Date.now() - r.ts < 7 * 864e5);
                 const badge = recent ? '<span class="rev-badge-new">Nuevo</span>' : '';
-                const photos = r.photos && r.photos.length ? `<div class="rev-photos">${r.photos.map(p => `<div class="rev-photo" onclick="openLightbox('${esc(p)}')"><img src="${p}" onerror="this.closest('.rev-photo').style.display='none'"></div>`).join('')}</div>` : '';
+                const photos = r.photos && r.photos.length ? `<div class="rev-photos">${r.photos.map(p => `<div class="rev-photo" onclick="openLightbox('${esc(p)}')"><img src="${p}${p.startsWith('data:') ? '' : '?v=3'}" onerror="this.closest('.rev-photo').style.display='none'"></div>`).join('')}</div>` : '';
                 const loc = r.location ? ` · ${r.location}` : '';
                 const time = !r.seed && r.ts ? `<div class="rev-time">${timeAgo(r.ts)}</div>` : '';
                 return `<div class="rev-card"><div class="rev-stars">${stars}</div><p class="rev-text">"${r.text}"</p>${photos}<div class="rev-author">— ${r.name}${loc}${badge}</div>${time}</div>`;
             }).join('');
             document.getElementById('rev-count').textContent = `5.0 ★ · ${all.length}+ reseñas verificadas`;
         }
-        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function openLightbox(src) { document.getElementById('lightbox-img').src = src + (src.startsWith('data:') ? '' : '?v=3'); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
 
         let reviewPhotos = [];
