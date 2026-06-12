@@ -8,14 +8,9 @@
     <meta name="description"
         content="iPhone Elite — la tienda premium de iPhone, iPad, Mac y Samsung en Santiago. Equipos sellados y seminuevos con garantía, boleta, entrega inmediata y parte de pago.">
     <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
-    <link rel="shortcut icon" href="logo.png">
     <meta property="og:title" content="iPhone Elite · Tecnología premium con garantía">
     <meta property="og:description" content="iPhone, iPad y Mac originales en Santiago. Garantía, boleta y entrega inmediata.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +34,7 @@
             /* Líneas */
             --line: rgba(255, 255, 255, 0.08);
             --line-2: rgba(255, 255, 255, 0.16);
-            --line-gold: rgba(212, 175, 55, 0.32);
+            --line-gold: rgba(255, 255, 255, 0.24);
 
             /* Tinta */
             --ink: #FFFFFF;
@@ -47,30 +42,30 @@
             --ink-mute: #6E6E73;
 
             /* Acento de marca — blanco / plata (antes oro) */
-            --gold-1: #F5D67A;
-            --gold-2: #D4AF37;
-            --gold-3: #9A7B2C;
-            --gold: #D4AF37;
-            --gold-grad: linear-gradient(135deg, #F5D67A 0%, #D4AF37 48%, #9A7B2C 100%);
-            --gold-soft: rgba(212, 175, 55, 0.10);
+            --gold-1: #FFFFFF;
+            --gold-2: #EDEDED;
+            --gold-3: #BFBFC4;
+            --gold: #FFFFFF;
+            --gold-grad: linear-gradient(135deg, #FFFFFF 0%, #DCDCDF 48%, #9A9AA0 100%);
+            --gold-soft: rgba(255, 255, 255, 0.08);
 
             /* Glow ambiental monocromo (antes auroras de color) */
-            --aurora-violet: #D4AF37;
-            --aurora-teal: #B58C2E;
-            --aurora-pink: #8B6B1E;
+            --aurora-violet: #D0D0D6;
+            --aurora-teal: #A0A0A6;
+            --aurora-pink: #7A7A80;
 
             /* Estados */
             --wa: #25D366;
             --wa-2: #1FAE52;
-            --success: #B5995A;
-            --offer: #D4AF37;
-            --danger: #C9824F;
+            --success: #DADADE;
+            --offer: #FFFFFF;
+            --danger: #E6E6EA;
 
             /* Sombras */
             --sh-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
             --sh-md: 0 12px 36px rgba(0, 0, 0, 0.5);
             --sh-lg: 0 32px 80px rgba(0, 0, 0, 0.62);
-            --sh-gold: 0 18px 50px rgba(212, 175, 55, 0.20);
+            --sh-gold: 0 18px 50px rgba(255, 255, 255, 0.10);
 
             --r-sm: 12px;
             --r-md: 18px;
@@ -324,7 +319,6 @@
             flex-shrink: 0;
         }
         .brand-mark svg { width: 24px; height: 24px; }
-        .brand-mark img { width: 40px; height: 40px; object-fit: contain; border-radius: 11px; }
         .brand-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
         .brand-name small { display: block; font-family: var(--font-body); font-size: 9px; font-weight: 700; letter-spacing: 0.26em; color: var(--ink-mute); margin-top: 3px; }
 
@@ -1059,9 +1053,9 @@
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <defs>
             <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#F5D67A" />
-                <stop offset="0.5" stop-color="#D4AF37" />
-                <stop offset="1" stop-color="#9A7B2C" />
+                <stop offset="0" stop-color="#FFFFFF" />
+                <stop offset="0.5" stop-color="#DCDCDF" />
+                <stop offset="1" stop-color="#9A9AA0" />
             </linearGradient>
         </defs>
     </svg>
@@ -1078,8 +1072,8 @@
     <div id="intro" onclick="enterSite()">
         <div class="ring-spin"></div>
         <div class="intro-logo">
-            <img class="intro-monogram" src="logo.svg" alt="iPhone Elite"
-                onerror="this.onerror=null; this.src='logo.png';">
+            <img class="intro-monogram" src="logo.png" alt="iPhone Elite"
+                onerror="this.outerHTML='<svg class=\'intro-monogram\' viewBox=\'0 0 120 120\'><rect x=\'6\' y=\'6\' width=\'108\' height=\'108\' rx=\'28\' fill=\'none\' stroke=\'url(%23goldGrad)\' stroke-width=\'2\'/><text x=\'50%\' y=\'56%\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'Space Grotesk,sans-serif\' font-size=\'58\' font-weight=\'600\' fill=\'url(%23goldGrad)\'>iE</text></svg>'">
             <div class="intro-word">
                 <span class="p1">iPhone</span><span class="gold-text">Elite</span>
             </div>
@@ -1097,7 +1091,9 @@
     <header id="header">
         <div class="wrap">
             <a class="brand" href="#top" aria-label="iPhone Elite inicio">
-                <span class="brand-mark"><img src="logo.png" alt="iE" onerror="this.outerHTML='<svg viewBox=\'0 0 40 40\'><text x=\'50%\' y=\'56%\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'Space Grotesk,sans-serif\' font-size=\'20\' font-weight=\'600\' fill=\'url(%23goldGrad)\'>iE</text></svg>'"></span>
+                <span class="brand-mark">
+                    <svg viewBox="0 0 40 40"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk,sans-serif" font-size="20" font-weight="600" fill="url(#goldGrad)">iE</text></svg>
+                </span>
                 <span class="brand-name">iPhone Elite<small>SANTIAGO · CHILE</small></span>
             </a>
             <nav class="nav-links">
@@ -1403,7 +1399,7 @@
             <div class="foot-grid">
                 <div class="foot-brand">
                     <a class="brand" href="#top">
-                        <span class="brand-mark"><img src="logo.png" alt="iE" onerror="this.outerHTML='<svg viewBox=\'0 0 40 40\'><text x=\'50%\' y=\'56%\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'Space Grotesk,sans-serif\' font-size=\'20\' font-weight=\'600\' fill=\'url(%23goldGrad)\'>iE</text></svg>'"></span>
+                        <span class="brand-mark"><svg viewBox="0 0 40 40"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk,sans-serif" font-size="20" font-weight="600" fill="url(#goldGrad)">iE</text></svg></span>
                         <span class="brand-name">iPhone Elite<small>SANTIAGO · CHILE</small></span>
                     </a>
                     <p>La tienda premium de dispositivos Apple en Chile. Equipos originales con garantía, boleta y la mejor atención. Tu confianza es nuestro mayor activo.</p>
@@ -1546,7 +1542,7 @@
     <nav id="side-menu" aria-hidden="true">
         <div class="sm-top">
             <a class="brand" href="#top" onclick="toggleSideMenu()">
-                <span class="brand-mark"><img src="logo.png" alt="iE" onerror="this.outerHTML='<svg viewBox=\'0 0 40 40\'><text x=\'50%\' y=\'56%\' text-anchor=\'middle\' dominant-baseline=\'middle\' font-family=\'Space Grotesk,sans-serif\' font-size=\'20\' font-weight=\'600\' fill=\'url(%23goldGrad)\'>iE</text></svg>'"></span>
+                <span class="brand-mark"><svg viewBox="0 0 40 40"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk,sans-serif" font-size="20" font-weight="600" fill="url(#goldGrad)">iE</text></svg></span>
                 <span class="brand-name">iPhone Elite<small>SANTIAGO · CHILE</small></span>
             </a>
             <button class="icon-btn" onclick="toggleSideMenu()" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12" /></svg></button>
@@ -1570,92 +1566,67 @@
         const WA_NUMBER = '56985884670';
         const formatCLP = n => '$' + n.toLocaleString('es-CL');
 
-        // ─── ACCESORIOS (no están en el Sheet del catálogo; hardcoded) ───
-        const ACCESSORIES = [
+        // ─── STOCK ───
+        const stock = [
+            { id: 1, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 11', slug: 'iphone-11', color: 'Rojo', storage: '64 GB', price: 169990 },
+            { id: 2, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 11 Pro', slug: 'iphone-11-pro', color: 'Verde Noche', storage: '64 GB', price: 249990 },
+            { id: 3, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 11 Pro Max', slug: 'iphone-11-pm', color: 'Space Gray', storage: '256 GB', price: 289990 },
+            { id: 4, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 mini', slug: 'iphone-12-mini', color: 'Blanco', storage: '64 GB', price: 219990 },
+            { id: 5, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12', slug: 'iphone-12', color: 'Azul medianoche', storage: '64 GB', price: 239990 },
+            { id: 6, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro', slug: 'iphone-12-pro', color: 'Dorado', storage: '128 GB', price: 329990 },
+            { id: 7, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro', slug: 'iphone-12-pro', color: 'Gris', storage: '128 GB', price: 329990 },
+            { id: 8, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro Max', slug: 'iphone-12-pm', color: 'Gris', storage: '128 GB', price: 399990 },
+            { id: 9, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 12 Pro Max', slug: 'iphone-12-pm', color: 'Azul', storage: '128 GB', price: 399990 },
+            { id: 10, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 mini', slug: 'iphone-13-mini', color: 'Medianoche', storage: '128 GB', price: 309990 },
+            { id: 11, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13', slug: 'iphone-13', color: 'Medianoche', storage: '128 GB', price: 369990 },
+            { id: 36, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13', slug: 'iphone-13', color: 'Blanco estelar', storage: '128 GB', price: 369990 },
+            { id: 37, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13', slug: 'iphone-13', color: 'Rosa', storage: '128 GB', price: 369990 },
+            { id: 12, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro', slug: 'iphone-13-pro', color: 'Grafito', storage: '256 GB', price: 479990 },
+            { id: 38, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro', slug: 'iphone-13-pro', color: 'Azul Sierra', storage: '256 GB', price: 479990 },
+            { id: 13, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro Max', slug: 'iphone-13-pm', color: 'Plata', storage: '128 GB', price: 549990 },
+            { id: 39, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 13 Pro Max', slug: 'iphone-13-pm', color: 'Grafito', storage: '128 GB', price: 549990 },
+            { id: 14, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14', slug: 'iphone-14', color: 'Rojo', storage: '128 GB', price: 429990 },
+            { id: 40, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14', slug: 'iphone-14', color: 'Medianoche', storage: '128 GB', price: 429990 },
+            { id: 15, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Plus', slug: 'iphone-14-plus', color: 'Azul', storage: '128 GB', price: 509990 },
+            { id: 16, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro', slug: 'iphone-14-pro', color: 'Blanco', storage: '128 GB', price: 569990 },
+            { id: 41, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro', slug: 'iphone-14-pro', color: 'Blanco', storage: '256 GB', price: 589990 },
+            { id: 42, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro · E-Sim', slug: 'iphone-14-pro', color: 'Negro', storage: '128 GB', price: 569990 },
+            { id: 43, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro', slug: 'iphone-14-pro', color: 'Morado', storage: '128 GB', price: 569990 },
+            { id: 17, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro Max', slug: 'iphone-14-pm', color: 'Negro', storage: '128 GB', price: 649990 },
+            { id: 18, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 14 Pro Max', slug: 'iphone-14-pm', color: 'Dorado', storage: '256 GB', price: 679990, tag: 'DESTACADO' },
+            { id: 19, brand: 'iphone', condition: 'sellado', name: 'iPhone 15', slug: 'iphone-15', color: 'Rosado', storage: '128 GB', price: 569990, tag: 'SELLADO' },
+            { id: 20, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Plus', slug: 'iphone-15-plus', color: 'Verde', storage: '128 GB', price: 619990 },
+            { id: 21, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro', slug: 'iphone-15-pro', color: 'Titanio natural', storage: '128 GB', price: 669990 },
+            { id: 22, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro Max', slug: 'iphone-15-pm', color: 'Negro', storage: '256 GB', price: 789990 },
+            { id: 44, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro Max', slug: 'iphone-15-pm', color: 'Titanio natural', storage: '256 GB', price: 789990 },
+            { id: 45, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 15 Pro Max', slug: 'iphone-15-pm', color: 'Azul titanio', storage: '256 GB', price: 789990 },
+            { id: 23, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16', slug: 'iphone-16', color: 'Negro', storage: '256 GB', price: 639990 },
+            { id: 46, brand: 'iphone', condition: 'sellado', name: 'iPhone 16', slug: 'iphone-16', color: 'Negro', storage: '128 GB', price: 659990, tag: 'NUEVO' },
+            { id: 24, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Plus', slug: 'iphone-16-plus', color: 'Ultramar', storage: '128 GB', price: 739990 },
+            { id: 25, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16e', slug: 'iphone-16e', color: 'Negro', storage: '128 GB', price: 599990 },
+            { id: 26, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Pro', slug: 'iphone-16-pro', color: 'Dorado', storage: '512 GB', price: 789990 },
+            { id: 27, brand: 'iphone', condition: 'reacondicionado', name: 'iPhone 16 Pro Max', slug: 'iphone-16-pm', color: 'Blanco', storage: '128 GB', price: 849990, oldPrice: 939990, tag: 'OFERTA' },
+            { id: 47, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Pro Max', slug: 'iphone-16-pm', color: 'Titanio natural', storage: '256 GB', price: 879990, oldPrice: 949990, tag: 'OFERTA' },
+            { id: 28, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 16 Pro Max', slug: 'iphone-16-pm', color: 'Negro', storage: '256 GB', price: 949990 },
+            { id: 29, brand: 'iphone', condition: 'sellado', name: 'iPhone 17', slug: 'iphone-17', color: 'Negro', storage: '256 GB', price: 889990, oldPrice: 909990, tag: 'NUEVO' },
+            { id: 30, brand: 'iphone', condition: 'sellado', name: 'iPhone 17 Air', slug: 'iphone-17-air', color: 'Plata', storage: '256 GB', price: 939990, tag: 'NUEVO' },
+            { id: 31, brand: 'iphone', condition: 'seminuevo', name: 'iPhone 17 Pro', slug: 'iphone-17-pro', color: 'Blanco', storage: '256 GB', price: 1249990 },
+            { id: 32, brand: 'iphone', condition: 'sellado', name: 'iPhone 17 Pro Max', slug: 'iphone-17-pm', color: 'Blanco', storage: '256 GB', price: 1349990, tag: 'NUEVO' },
+            { id: 48, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S23 Ultra', slug: 's23-ultra', color: 'Blanco', storage: '512 GB', price: 479990 },
+            { id: 33, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S26 Ultra', slug: 's26-ultra', color: 'Blue', storage: '256 GB', price: 999990 },
+            { id: 34, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S24 Ultra', slug: 's24-ultra', color: 'Negro', storage: '256 GB', price: 589990 },
+            { id: 35, brand: 'samsung', condition: 'seminuevo', name: 'Samsung S24 Ultra', slug: 's24-ultra', color: 'Negro', storage: '512 GB', price: 619990 },
+            { id: 49, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3', slug: 'ipad-air-11-m3', color: 'Purple', storage: '128 GB', price: 569990, tag: 'NUEVO' },
+            { id: 50, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3 + Apple Pencil', slug: 'ipad-air-11-m3', color: 'Purple', storage: '128 GB', price: 659990, tag: 'NUEVO' },
+            { id: 51, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3', slug: 'ipad-air-11-m3-blanco', color: 'Blanco Estelar', storage: '128 GB', price: 569990, tag: 'NUEVO' },
+            { id: 52, brand: 'ipad', condition: 'sellado', name: 'iPad Air 11" M3 + Pencil Pro', slug: 'ipad-air-11-m3-blanco', color: 'Blanco Estelar', storage: '128 GB', price: 659990, tag: 'NUEVO' },
+            { id: 53, brand: 'macbook', condition: 'seminuevo', name: 'MacBook Air 13" M3', slug: 'macbook-air-13-m3', color: 'Midnight', storage: '512 GB · 16GB RAM', price: 889990 },
+            { id: 54, brand: 'macbook', condition: 'sellado', name: 'MacBook Pro 14" M3 Pro', slug: 'macbook-pro-14-m3-pro', color: 'Black', storage: '1 TB · 36GB RAM', price: 1999990, tag: 'NUEVO' },
             { id: 100, brand: 'accesorio', condition: 'nuevo', name: 'Cargador USB-C 20W', slug: 'cargador-20w', color: 'Blanco', storage: '20W', price: 14990, isAccessory: true },
             { id: 103, brand: 'accesorio', condition: 'nuevo', name: 'Cargador Lightning 20W', slug: 'cargador-lightning', color: 'Blanco', storage: '20W', price: 14990, isAccessory: true },
             { id: 101, brand: 'accesorio', condition: 'nuevo', name: 'Lámina Vidrio Templado', slug: 'lamina-templado', color: 'Transparente', storage: 'Universal', price: 9990, isAccessory: true },
             { id: 102, brand: 'accesorio', condition: 'nuevo', name: 'Carcasa Silicona', slug: 'carcasa-silicona', color: 'Transparente', storage: 'Universal', price: 12990, isAccessory: true }
         ];
-
-        // ─── STOCK EN VIVO desde n8n (el dueño edita por Telegram → Google Sheets) ───
-        const CATALOG_API_URL = 'https://up-n8n.7kmtuf.easypanel.host/webhook/catalogo-iphone-elite';
-        let stock = [];
-
-        function modelToSlug(name, color) {
-            if (!name) return '';
-            let s = String(name).toLowerCase().trim();
-            if (s.includes('ipad air 11') && s.includes('m3')) {
-                return (color && /blanco/i.test(color)) ? 'ipad-air-11-m3-blanco' : 'ipad-air-11-m3';
-            }
-            if (s.includes('macbook pro') && s.includes('m3 pro')) return 'macbook-pro-14-m3-pro';
-            if (s.includes('macbook air') && s.includes('m3')) return 'macbook-air-13-m3';
-            const sm = s.match(/^samsung s(\d+) ultra/);
-            if (sm) return `s${sm[1]}-ultra`;
-            if (s.startsWith('iphone')) {
-                s = s.replace(/^iphone /, 'iphone-');
-                s = s.replace(/ pro max( · e-?sim| e-?sim)?$/, '-pm');
-                s = s.replace(/ pro( · e-?sim| e-?sim)?$/, '-pro');
-                s = s.replace(/ plus$/, '-plus');
-                s = s.replace(/ mini$/, '-mini');
-                s = s.replace(/ air$/, '-air');
-                return s.replace(/\s+/g, '-');
-            }
-            return s.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        }
-
-        function mapApiProduct(p) {
-            const brand = String(p.marca_raw || '').toLowerCase().split(/[-\s]/)[0] || 'iphone';
-            const condition = String(p.condicion || 'seminuevo').toLowerCase();
-            return {
-                id: Number(p.id) || 0,
-                brand,
-                condition,
-                name: p.modelo || '',
-                slug: modelToSlug(p.modelo, p.color),
-                color: p.color || '',
-                storage: p.almacenamiento || '',
-                price: Number(p.precio || 0),
-                tag: condition === 'sellado' ? 'SELLADO' : ''
-            };
-        }
-
-        function setCatalogStatus(html, isError) {
-            let el = document.getElementById('catalog-status');
-            if (!el) {
-                el = document.createElement('div');
-                el.id = 'catalog-status';
-                el.style.cssText = 'text-align:center;padding:1.5rem 1rem;font-size:.92rem;opacity:.85;';
-                const filtersEl = document.getElementById('filters');
-                if (filtersEl) filtersEl.insertAdjacentElement('afterend', el);
-            }
-            if (!html) { el.style.display = 'none'; return; }
-            el.style.display = '';
-            el.style.color = isError ? '#d97a7a' : '';
-            el.innerHTML = html;
-        }
-
-        async function loadCatalog() {
-            setCatalogStatus('Cargando catálogo en vivo…');
-            try {
-                const r = await fetch(CATALOG_API_URL, { cache: 'no-store' });
-                if (!r.ok) throw new Error('HTTP ' + r.status);
-                const data = await r.json();
-                const products = (data.productos || []).map(mapApiProduct).filter(p => p.id);
-                stock = [...products, ...ACCESSORIES];
-                renderStock();
-                renderBestsellers();
-                renderOffers();
-                renderAccessories();
-                setCatalogStatus('');
-            } catch (e) {
-                console.error('Error cargando catálogo:', e);
-                stock = [...ACCESSORIES];
-                renderStock();
-                renderAccessories();
-                setCatalogStatus('No pudimos cargar el catálogo. <button onclick="loadCatalog()" style="background:none;border:1px solid currentColor;border-radius:6px;padding:.35rem .8rem;color:inherit;cursor:pointer;margin-left:.5rem">Reintentar</button>', true);
-            }
-        }
 
         // ─── MAPA DE IMÁGENES (frente + atrás por modelo, archivos reales del repo) ───
         const IMG_MAP = {
@@ -1932,7 +1903,7 @@
                 return `<button class="vchip ${s === detailState.storage ? 'active' : ''} ${!avail ? 'unavailable' : ''}" onclick="selectStorage('${esc(s)}')">${s}</button>`;
             }).join('');
 
-            document.getElementById('d-wa').href = waLink(`Hola iPhone Elite 👋 Me interesa comprar el ${sel.name} ${sel.storage} · ${sel.color} publicado en su web por ${formatCLP(sel.price)}. ¿Sigue disponible? Quiero coordinar compra hoy mismo 📦`);
+            document.getElementById('d-wa').href = waLink(`Hola iPhone Elite 👋 Me interesa el ${sel.name} ${sel.storage} · ${sel.color} por ${formatCLP(sel.price)}. ¿Sigue disponible? 📦`);
 
             const upsellEl = document.getElementById('d-upsell');
             if (sel.isAccessory) { upsellEl.innerHTML = ''; return; }
@@ -2019,10 +1990,10 @@
             let waMsg;
             if (cart.length === 1) {
                 const p = cart[0]; const desc = p.isAccessory ? p.name : `${p.name} ${p.storage} · ${p.color}`;
-                waMsg = `Hola iPhone Elite 👋 Me interesa comprar el ${desc} publicado en su web por ${formatCLP(p.price)}. ¿Sigue disponible? Quiero coordinar compra hoy mismo 📦`;
+                waMsg = `Hola iPhone Elite 👋 Me interesa comprar el ${desc} publicado en su web por ${formatCLP(p.price)}. ¿Sigue disponible? Quiero coordinar compra hoy 📦`;
             } else {
                 const lista = cart.map(p => `• ${p.isAccessory ? p.name : `${p.name} ${p.storage} · ${p.color}`} — ${formatCLP(p.price)}`).join('\n');
-                waMsg = `Hola iPhone Elite 👋 Me interesa comprar:\n${lista}\n\nTotal: ${formatCLP(Math.max(total, 0))}\n\n¿Siguen disponibles? Quiero coordinar compra hoy mismo 📦`;
+                waMsg = `Hola iPhone Elite 👋 Me interesa comprar:\n${lista}\n\nTotal: ${formatCLP(Math.max(total, 0))}\n\n¿Siguen disponibles? Quiero coordinar compra hoy 📦`;
             }
             cta.href = waLink(waMsg); cta.classList.remove('disabled');
         }
@@ -2119,15 +2090,15 @@
             const arr = localReviews(); arr.unshift(rec); localStorage.setItem(LS_KEY, JSON.stringify(arr));
         }
         const DEFAULT_REVIEWS = [
-            { id: 's1', seed: true, name: 'Ricardo M.', location: 'Santiago', stars: 5, text: 'Compré el iPhone 15 Pro Max y llegó como nuevo. Súper rápido el despacho.', photos: ['review-1.jpg'] },
-            { id: 's2', seed: true, name: 'Sofía L.', location: 'Providencia', stars: 5, text: 'Mi iPhone llegó perfecto, con boleta y todos los accesorios. Recomendados 100%.', photos: ['review-2.jpg'] },
-            { id: 's3', seed: true, name: 'Javier O.', location: 'Las Condes', stars: 5, text: 'Muy serios, resolvieron cada duda antes de comprar. Volveré sin dudarlo.', photos: ['review-3.jpg'] },
-            { id: 's4', seed: true, name: 'Manuel V.', location: 'Ñuñoa', stars: 5, text: 'Compré el 12 para mi señora, batería 100% real. Postventa impecable.', photos: ['review-4.jpg'] },
-            { id: 's5', seed: true, name: 'Constanza F.', location: 'Maipú', stars: 5, text: 'Llegó sellado en su caja con boleta y garantía. Volveré a comprar seguro.', photos: ['review-5.jpg'] },
-            { id: 's6', seed: true, name: 'Diego A.', location: 'La Florida', stars: 5, text: 'Di mi viejo iPhone en parte de pago. Cotización justa y al toque, sin vueltas.', photos: ['review-6.jpg'] },
-            { id: 's7', seed: true, name: 'Catalina P.', location: 'Vitacura', stars: 5, text: 'Pedí mi iPhone a regiones y llegó en 48h con seguimiento. Espectacular.', photos: ['review-7.jpg'] },
-            { id: 's8', seed: true, name: 'Tomás R.', location: 'Concepción', stars: 5, text: 'Soy de Concepción y llegó intacto y bien empacado. Todo OK.', photos: ['review-8.jpg'] },
-            { id: 's9', seed: true, name: 'Valentina S.', location: 'Viña del Mar', stars: 5, text: 'Primera vez comprando seminuevo y quedé feliz. Batería real, sin trucos.', photos: ['review-9.jpg'] }
+            { id: 's1', seed: true, name: 'Ricardo M.', location: 'Santiago', stars: 5, text: 'Compré el iPhone 15 Pro Max y llegó como nuevo. Súper rápido el despacho.', photos: ['review-iphone-unboxing.jpg'] },
+            { id: 's2', seed: true, name: 'Sofía L.', location: 'Providencia', stars: 5, text: 'Mi iPhone llegó perfecto, con boleta y todos los accesorios. Recomendados 100%.', photos: ['review-iphone-mesa-1.jpg'] },
+            { id: 's3', seed: true, name: 'Javier O.', location: 'Las Condes', stars: 5, text: 'Muy serios, resolvieron cada duda antes de comprar. Volveré sin dudarlo.', photos: ['review-iphone-mano-1.jpg'] },
+            { id: 's4', seed: true, name: 'Manuel V.', location: 'Ñuñoa', stars: 5, text: 'Compré el 12 para mi señora, batería 100% real. Postventa impecable.', photos: ['review-iphone-mesa-3.jpg'] },
+            { id: 's5', seed: true, name: 'Constanza F.', location: 'Maipú', stars: 5, text: 'Llegó sellado en su caja con boleta y garantía. Volveré a comprar seguro.', photos: ['review-iphone-cama-2.jpg'] },
+            { id: 's6', seed: true, name: 'Diego A.', location: 'La Florida', stars: 5, text: 'Di mi viejo iPhone en parte de pago. Cotización justa y al toque, sin vueltas.', photos: ['review-iphone-cargador.jpg'] },
+            { id: 's7', seed: true, name: 'Catalina P.', location: 'Vitacura', stars: 5, text: 'Pedí mi iPhone a regiones y llegó en 48h con seguimiento. Espectacular.', photos: ['review-iphone-mesa-4.jpg'] },
+            { id: 's8', seed: true, name: 'Tomás R.', location: 'Concepción', stars: 5, text: 'Soy de Concepción y llegó intacto y bien empacado. Todo OK.', photos: ['review-iphone-mesa-2.jpg'] },
+            { id: 's9', seed: true, name: 'Valentina S.', location: 'Viña del Mar', stars: 5, text: 'Primera vez comprando seminuevo y quedé feliz. Batería real, sin trucos.', photos: ['review-iphone-cama-1.jpg'] }
         ];
         function timeAgo(ts) {
             if (!ts) return '';
@@ -2163,14 +2134,14 @@
                 const stars = '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars);
                 const recent = !r.seed && r.ts && (Date.now() - r.ts < 7 * 864e5);
                 const badge = recent ? '<span class="rev-badge-new">Nuevo</span>' : '';
-                const photos = r.photos && r.photos.length ? `<div class="rev-photos">${r.photos.map(p => `<div class="rev-photo" onclick="openLightbox('${esc(p)}')"><img src="${p}${p.startsWith('data:') ? '' : '?v=3'}" onerror="this.closest('.rev-photo').style.display='none'"></div>`).join('')}</div>` : '';
+                const photos = r.photos && r.photos.length ? `<div class="rev-photos">${r.photos.map(p => `<div class="rev-photo" onclick="openLightbox('${esc(p)}')"><img src="${p}" onerror="this.closest('.rev-photo').style.display='none'"></div>`).join('')}</div>` : '';
                 const loc = r.location ? ` · ${r.location}` : '';
                 const time = !r.seed && r.ts ? `<div class="rev-time">${timeAgo(r.ts)}</div>` : '';
                 return `<div class="rev-card"><div class="rev-stars">${stars}</div><p class="rev-text">"${r.text}"</p>${photos}<div class="rev-author">— ${r.name}${loc}${badge}</div>${time}</div>`;
             }).join('');
             document.getElementById('rev-count').textContent = `5.0 ★ · ${all.length}+ reseñas verificadas`;
         }
-        function openLightbox(src) { document.getElementById('lightbox-img').src = src + (src.startsWith('data:') ? '' : '?v=3'); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
 
         let reviewPhotos = [];
@@ -2280,7 +2251,7 @@
             });
         }
         function setWaLinks() {
-            const greet = waLink('Hola iPhone Elite 👋 Me interesa comprar el {producto} publicado en su web por {precio}. ¿Sigue disponible? Quiero coordinar compra hoy mismo 📦');
+            const greet = waLink('Hola iPhone Elite 👋 Vengo de su página web y quiero más información. ¿Me ayudan? 📱');
             ['hero-wa', 'foot-wa', 'foot-wa-link', 'fab-wa', 'sm-wa'].forEach(id => { const el = document.getElementById(id); if (el) el.href = greet; });
         }
 
@@ -2292,17 +2263,15 @@
             intro.classList.add('gone');
             setTimeout(() => { intro.style.display = 'none'; }, 1000);
         }
-        async function init() {
+        function init() {
             document.getElementById('hero-device-img').src = imgForSlug('iphone-17-pro');
             document.getElementById('year').textContent = '2026';
             setWaLinks();
-            renderFilters();
+            renderFilters(); renderStock(); renderBestsellers(); renderOffers(); renderAccessories();
             renderFAQ(); setupStarPicker(); renderReviews();
             initReveal(); initHeaderScroll(); initMagnetic(); startSocialProof();
             // auto-cierre del intro de respaldo
             setTimeout(() => { if (!entered) enterSite(); }, 4200);
-            // Catálogo en vivo (n8n → Sheets editado por Telegram)
-            await loadCatalog();
         }
 
         document.addEventListener('keydown', e => {
